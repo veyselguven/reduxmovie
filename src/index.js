@@ -9,6 +9,7 @@ import thunk from "redux-thunk";
 import rootReducer from "./reducers/rootReducer";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 
 const store = createStore(
   rootReducer,
@@ -17,11 +18,13 @@ const store = createStore(
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Provider store={store}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </Provider>
+  <BrowserRouter>
+    <Provider store={store}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </Provider>
+  </BrowserRouter>
 );
 
 // If you want your app to work offline and load faster, you can change

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import MoviesPage from "./components/pages/MoviesPage";
+import { Link, Route, Routes } from "react-router-dom";
 
 class App extends Component {
   render() {
@@ -19,6 +21,10 @@ class App extends Component {
           >
             Learn React
           </a>
+          <Link to="movies">Movies</Link>
+          <Routes>
+            <Route path="/movies" element={<MoviesPage />} />
+          </Routes>
         </header>
       </div>
     );
