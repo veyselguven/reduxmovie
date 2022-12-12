@@ -17,7 +17,7 @@ class MoviesPage extends Component {
     console.log("props from the redux store", this.props);
     return (
       <div>
-        <h2>MoviesPage</h2>
+        <h2>Movies </h2>
         <MoviesList movies={this.props.movies} />
       </div>
     );

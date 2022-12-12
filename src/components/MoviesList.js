@@ -1,4 +1,6 @@
 import React from "react";
+import MovieCard from "./MovieCard";
+import { Grid } from "semantic-ui-react";
 
 function MoviesList(props) {
   console.log("movieListProps=>", props);
@@ -9,7 +11,11 @@ function MoviesList(props) {
       {props.movies.error.response ? (
         <h3>Errorr retreiving data!</h3>
       ) : (
-        <h1>Hata yok</h1>
+        <Grid stackable columns={3}>
+          {props.movies.movies.map((movie, index) => (
+            <MovieCard key={index} movie={movie} />
+          ))}
+        </Grid>
       )}
     </div>
   );
