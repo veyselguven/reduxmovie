@@ -19,6 +19,13 @@ export default class NewMovieForm extends Component {
     this.setState({
       errors,
     });
+    if (Object.keys(errors).length === 0) {
+      this.props.onNewMovieSubmit(this.state);
+    }
+    this.setState({
+      title: "",
+      cover: "",
+    });
   };
 
   validate = () => {
@@ -33,7 +40,7 @@ export default class NewMovieForm extends Component {
     return (
       <div>
         <h2>New Movie Form</h2>
-        <Form onSubmit={this.onSubmit}>
+        <Form onSubmit={this.onSubmit} loading={this.props.newMovie.fetching}>
           <Form.Field error={!!errors.title}>
             <label>Title </label>
             {errors.title && <InlineErrors message={errors.title} />}

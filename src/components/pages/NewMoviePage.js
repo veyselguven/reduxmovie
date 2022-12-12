@@ -13,7 +13,10 @@ class NewMoviePage extends Component {
     console.log("store from redux to newMovie", this.props);
     return (
       <div>
-        <NewMovieForm onNewMovieSubmit={this.props.onNewMovieSubmit} />
+        <NewMovieForm
+          onNewMovieSubmit={this.props.onNewMovieSubmit}
+          newMovie={this.props} // comes from redux store
+        />
       </div>
     );
   }

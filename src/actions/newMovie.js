@@ -4,13 +4,17 @@ import { API_BASE } from "../config/env";
 export const NEW_MOVIE_FULFILLED = "NEW_MOVIE_FULFILLED";
 export const NEW_MOVIE_REJECTED = "NEW_MOVIE_REJECTED";
 
-export function onNewMovieSubmit() {
+export function onNewMovieSubmit({ title, cover }) {
+  console.log("title,cover=>", title, cover);
   return (dispatch) => {
     dispatch({
       type: NEW_MOVIE_FULFILLED,
       payload: axios
-        .get(`${API_BASE}/movies`)
-        .then((result) => result.data.movies),
+        .post(`${API_BASE}/movies`, {
+          title,
+          cover,
+        })
+        .then((result) => console.log(result)),
     });
   };
 }
