@@ -5,7 +5,6 @@ import {
 
 const initialState = {
   fetching: false,
-  fetched: false,
   movies: [],
   error: {},
 };
