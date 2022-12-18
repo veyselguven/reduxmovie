@@ -39,7 +39,6 @@ export default class NewMovieForm extends Component {
     const { errors } = this.state;
     return (
       <div>
-        <h2>New Movie Form</h2>
         <Form onSubmit={this.onSubmit} loading={this.props.newMovie.fetching}>
           <Form.Field error={!!errors.title}>
             <label>Title </label>

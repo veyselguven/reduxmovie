@@ -12,7 +12,7 @@ function MoviesList(props) {
         <h3>Errorr retreiving data!</h3>
       ) : (
         <Grid stackable columns={3}>
-          {props.movies.movies.map((movie, index) => (
+          {props.movies.moviesList.map((movie, index) => (
             <MovieCard key={index} movie={movie} />
           ))}
         </Grid>

@@ -10,7 +10,7 @@ export function onNewMovieSubmit({ title, cover }) {
     dispatch({
       type: NEW_MOVIE_FULFILLED,
       payload: axios
-        .post(`${API_BASE}/movies`, {
+        .post(`${API_BASE}/moveries`, {
           title,
           cover,
         })
